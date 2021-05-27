@@ -53,7 +53,7 @@ def display(s):
     print(text)
 
 def shCommand(sh_command, output):
-    if output is 0:
+    if output == 0:
        call(sh_command, shell=True, stdin=PIPE, stdout=PIPE, stderr=STDOUT, close_fds=True)
     else:
        call(sh_command, shell=True)
@@ -136,7 +136,7 @@ def remove_old_files(image):
     display("Removing old files if they're present...")
     if os.path.isfile("signimg2img.py"):
        for file in glob.glob('*.*'):
-           if image is "full":
+           if image == "full":
                if file.startswith("signimg2img") or file.startswith("LICENSE") or file.startswith("README"):
                    pass
                else:
@@ -174,11 +174,11 @@ def main():
           display("Done, image extracted as {}.unpack\n".format(sys.argv[2]))
     elif sys.argv[1] == "-o":
       check_header(sys.argv[2])
-      if header is "SSSS":
+      if header == "SSSS":
           offset = get_offset(sys.argv[2])
           display("Offset: {}".format(offset))
       display("Size: {} bytes".format(os.path.getsize(sys.argv[2])))
-      if header is "BFBF" or "SSSS":
+      if header == "BFBF" or header == "SSSS":
           display("Image can be unpacked: yes\n")
       else:
           display("Image can be unpacked: no (invalid header)\n")

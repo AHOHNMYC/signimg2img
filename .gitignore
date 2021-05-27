@@ -1,0 +1,14 @@
+# bin images
+*.bin
+
+# raw images
+*.img
+
+# ext4 images
+*.ext4
+
+# unpacked system directories
+system_out
+
+# unpacked images
+*.unpack

@@ -174,7 +174,7 @@ def main():
         if os.path.exists("system_out"):
             p = Popen("umount system_out", shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
             if(len(p.stderr.read()) != 0):
-                raise RuntimeError("Cannot unmount the system_out folder!")
+                display("(W) Cannot unmount the system_out folder!")
             shutil.rmtree("system_out")
         display("Cleaned up!\n")    
     else:

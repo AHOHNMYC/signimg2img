@@ -3,6 +3,7 @@
          #====================================================#
          #              FILE: signimg2img.py                  #
          #              AUTHOR: R0rt1z2                       #
+         #              DATE: 2019-2021                       #
          #====================================================#
 
 #   Android signed images extractor. To use the script:

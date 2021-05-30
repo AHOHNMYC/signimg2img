@@ -157,7 +157,7 @@ def main():
         help()
     elif sys.argv[1] == "-u" and len(sys.argv) != 1:
         display("Selected: Unpack {}".format(sys.argv[2]))
-        check_header(sys.argv[2])
+        header = check_header(sys.argv[2])
         remove_old_files(sys.argv[2])
         if "system" in sys.argv[2]:
             unpack_system(header)

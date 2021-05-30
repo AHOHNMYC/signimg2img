@@ -19,22 +19,17 @@ signimg2img.py -c
 ## Example
 This is a simple example on a Linux system: 
 ```
-r0rtiz2@r0rtiz2:~/signimg2img$ python3 signimg2img.py -u system-sign.img
+r0rt1z2@r0rt1z2: /signimg2img$ python3 signimg2img.py -u recovery-sign.img
+signimg2img binary - version: 1.5
 
-signimg2img binary - version: 1.4
-
-[signimg2img-log] Selected: Unpack system-sign.img
-[signimg2img-log] Header is SSSS: 1397969747
-[signimg2img-log] Removing old files if they're present...
-[signimg2img-log] Getting the offset...
-[signimg2img-log] Got 1885696592 as offset!
+[signimg2img-log] Selected image: recovery-sign.img
+[signimg2img-log] Image header: b'BFBF'
+[signimg2img-log] Image header string: 'recovery' (0x000010)
+[signimg2img-log] Removing old files...
 [signimg2img-log] Deleting the header...
-[signimg2img-log] Header remove complete!
-[signimg2img-log] Converting to ext4 image...
-[signimg2img-log] Unpacking system image...
-[signimg2img-log] system-sign.img extracted at system_out
+[signimg2img-log] Done, image extracted as recovery.img
 
-r0rtiz2@r0rtiz2:~/signimg2img$ 
+r0rt1z2@r0rt1z2: /signimg2img$
 ```
 
 ## Supported headers

@@ -7,7 +7,7 @@
          #====================================================#
 
 #   Android signed images extractor. To use the script:
-#   "python3 signimg2img -b/-r/-s" or -i image_name to unpack any other image.
+#   "python3 signimg2img.py -u image_name to unpack any other image.
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by

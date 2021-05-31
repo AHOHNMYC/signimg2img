@@ -133,7 +133,7 @@ def remove_old_files(image):
                     pass
                 else:
                     os.remove(file)
-            elif file.endswith(".unpack") or file.endswith(".ext4"):
+            elif file.endswith(".ext4"):
                 os.remove(file)
             elif file.startswith("signimg2img") or file.endswith("-sign.img") or file.startswith("LICENSE") or file.startswith("README"):
                 pass
@@ -162,8 +162,8 @@ def main():
         if "system" in sys.argv[2]:
             unpack_system(header)
         else:
-            delete_header(sys.argv[2], "{}.unpack".format(sys.argv[2]), header, 0)
-            display("Done, image extracted as {}.unpack\n".format(sys.argv[2]))
+            delete_header(sys.argv[2], "{}".format(sys.argv[2].replace("-sign", "")), header, 0)
+            display("Done, image extracted as {}\n".format(sys.argv[2]).replace("-sign", ""))
     elif sys.argv[1] == "-o":
         header = check_header(sys.argv[2])
         if header == "SSSS":

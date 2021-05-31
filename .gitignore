@@ -11,4 +11,4 @@
 system_out
 
 # unpacked images
-*.unpack
+!*-sign.img

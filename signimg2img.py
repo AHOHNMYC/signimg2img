@@ -6,7 +6,7 @@
          #              DATE: 2019-2021                       #
          #====================================================#
 
-#   Android signed images extractor. To use the script:
+#   Android signed images extractor v1.5. To use the script:
 #   "python3 signimg2img.py -u image_name to unpack any other image.
 #
 #   This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@ import time
 import shutil
 import os
 
-__version__ = '1.4'
+__version__ = '1.5'
 
 if sys.platform.startswith("darwin") or sys.platform.startswith("win") or sys.platform.startswith("linux"):
     pass

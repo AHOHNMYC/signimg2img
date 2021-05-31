@@ -158,12 +158,16 @@ def main():
     elif sys.argv[1] == "-u" and len(sys.argv) != 1:
         display("Selected image: {}".format(sys.argv[2]))
         header = check_header(sys.argv[2])
-        remove_old_files(sys.argv[2])
+        #remove_old_files(sys.argv[2])
         if "system" in sys.argv[2]:
             unpack_system(header)
         else:
-            delete_header(sys.argv[2], "{}".format(sys.argv[2].replace("-sign", "")), header, 0)
-            display("Done, image extracted as {}\n".format(sys.argv[2]).replace("-sign", ""))
+            if "-sign" in sys.argv[2]:
+                output_image = sys.argv[2].replace("-sign", "")
+            else:
+                output_image = sys.argv[2] + ".unpack"
+            delete_header(sys.argv[2], "{}".format(output_image), header, 0)
+            display("Done, image extracted as {}\n".format(output_image).replace("-sign", ""))
     elif sys.argv[1] == "-o":
         header = check_header(sys.argv[2])
         if header == "SSSS":

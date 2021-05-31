@@ -38,3 +38,6 @@ r0rt1z2@r0rt1z2: /signimg2img$
 
 ## License
 * This program is licensed under the GNU General Public License (v3). See `LICENSE` for details.
+
+## Other information
+* To sign modified images you can use MediaTek's propietary tools: https://github.com/R0rt1z2/vendor_mediatek_signtool

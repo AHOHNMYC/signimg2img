@@ -32,18 +32,16 @@ if __name__ == '__main__':
 
     header = in_file.read(4)
 
-    # Seek from file start (0), not current position (4)
+    # -4 because we have read those bytes already
     if header == b'BFBF':
         # After 0x4000 BFBF header goes 0x40 SSSS header. Cut 'em both!
-        # in_file.seek(0x4040)
-        in_file.read(0x4040-4)
+        in_file.read(0x4000+0x40 -4)
     elif header == b'SSSS':
-        # in_file.seek(0x40)
-        in_file.seek(0x40-4)
+        in_file.read(0x40 -4)
     else:
         print(f"Unknown image header: {header.decode(errors='ignore')} ({header})")
         print('Known headers are: BFBF, SSSS')
-        print('Try to use more powerful tool: Android Image Kitchen https://forum.xda-developers.com/t/2073775/')
+        print('Try more powerful tool: Android Image Kitchen https://forum.xda-developers.com/t/2073775/')
         exit(1)
 
     # Copy by 16 MiB chunk

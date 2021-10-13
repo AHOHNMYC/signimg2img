@@ -49,6 +49,7 @@ if __name__ == '__main__':
     # Copy by 16 MiB chunk
     while out_file.write(in_file.read(16 * 1024 * 1024)):
         pass
+    out_file.flush()
 
     print('Headers removed successfully!')
     print('Now you may desparse *system* image using simg2img tool: https://github.com/anestisb/android-simg2img')
